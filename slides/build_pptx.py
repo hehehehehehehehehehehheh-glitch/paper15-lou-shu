@@ -183,7 +183,7 @@ def build(v, notes, out):
     s = d.slide("Problem")
     text(s, 0.47, 1.75, 4.2, 1.0, ["Illiquid stocks earn a premium.", "Is it for price impact, or just for low volume?"],
          18, spacing=1.05)
-    text(s, 0.47, 3.15, 4.2, 0.5, "A = (1/D) · Σ_{d} |r_{d}| / DVol_{d}", 18)
+    picture(s, HERE / "hse/eq/amihud.png", 0.47, 2.95, w=684 / 600 * 1.9)
     for cx, head, mid, midfill, low in [(6.5, "Standard reading", "price impact", ROSE, "illiquidity\npremium"),
                                         (8.3, "Lou & Shu", "trading volume", GREEN, "low-volume\npremium")]:
         text(s, cx - 0.85, 1.35, 1.7, 0.25, head, 10, align=PP_ALIGN.CENTER)
@@ -199,7 +199,7 @@ def build(v, notes, out):
     d.sentence(s, "A_{C} keeps only 1/DVol, and it explains almost all of A.", 4.15)
 
     s = d.slide("Method: split Amihud in two")
-    text(s, 0.47, 2.0, 4.2, 0.5, "ln A = a_{t} + b_{t} · ln A_{C} + Res.ln A", 18)
+    picture(s, HERE / "hse/eq/split.png", 0.47, 2.02, w=1340 / 600 * 1.8)
     text(s, 0.47, 2.75, 4.0, 1.0, "If only the volume part is priced, the premium is about volume.", 18, spacing=1.05)
     box(s, 5.6, 1.55, 3.4, 0.5, "ln A", HSE, color=WHITE)
     tri_down(s, 7.3, 2.12)
@@ -214,7 +214,7 @@ def build(v, notes, out):
                               (6.63, HSE, "month t", "RETURN")]:
         bar(s, x, 1.75, 2.9, 0.1, fill)
         text(s, x, 1.95, 2.9, 0.6, [(top, 10), (lab, 16)], 10, align=PP_ALIGN.CENTER)
-    text(s, 0.47, 2.95, 9.06, 0.5, "r_{i,t} = γ_{0} + γ_{1} X_{i,t−2} + controls + ε_{i,t}", 22, align=PP_ALIGN.CENTER)
+    picture(s, HERE / "hse/eq/fm.png", y=2.95, w=1158 / 600 * 2.2, center_x=5.0)
     d.sentence(s, "Quintile sorts and Fama–MacBeth, as in the paper.", 4.20)
 
     s = d.slide("The paper's result")
